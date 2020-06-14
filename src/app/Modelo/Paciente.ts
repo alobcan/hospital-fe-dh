@@ -1,6 +1,7 @@
 export class Paciente{
+    id:number;
     nombre:String;
-    apelllido:String;
-    birthDate:String;
+    apellido:String;
+    fecha_nacimiento:String;
     direccion:String; 
 }

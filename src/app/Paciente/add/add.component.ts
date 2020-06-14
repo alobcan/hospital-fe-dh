@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ServiceService } from 'src/app/Service/service.service';
+import { Paciente } from 'src/app/Modelo/Paciente';
 
 @Component({
   selector: 'app-add',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router, private service:ServiceService) { }
+
+  paciente:Paciente = new Paciente();
 
   ngOnInit(): void {
+  }
+
+  Guardar(){
+    this.service.createPaciente(this.paciente).subscribe(data=>{
+      alert("Se agrego el paciente con exito..!");
+      this.router.navigate(["listar"])
+    })
   }
 
 }

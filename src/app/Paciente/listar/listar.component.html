@@ -4,31 +4,33 @@
             <h3>Pacientes</h3>
         </div>
         <div class="card-body">
-           <table class="table table-hover">
-               <thead>
-                   <tr>
-                       <th>NOMBRE</th>
-                       <th>APELLIDO</th>
-                       <th>FECHA DE NACIMIENTO</th>
-                       <th>DIRECCION</th>
-                       <th>HISTORIAL</th>
-                       <th>ACCIONES</th>
-                   </tr>
-               </thead>
-               <tbody>
-                   <tr class="text-center">
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td>
-                           <button class="btn btn-warning">Editar</button>
-                           <button class="btn btn-danger">Borrar</button>
-                       </td>
-                   </tr>
-               </tbody>
-           </table> 
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDO</th>
+                        <th>FECHA DE NACIMIENTO</th>
+                        <th>DIRECCION</th>
+                        <th>HISTORIAL</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let paciente of pacientes" class="text-center">
+                        <td>{{paciente.id}}</td>
+                        <td>{{paciente.nombre}}</td>
+                        <td>{{paciente.apellido}}</td>
+                        <td>{{paciente.fecha_nacimiento}}</td>
+                        <td>{{paciente.direccion}}</td>
+                        <td></td>
+                        <td>
+                            <button (click)=Editar(paciente) class="btn btn-warning">Editar</button>
+                            <button (click)=Borrar(paciente) class="btn btn-danger">Borrar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
