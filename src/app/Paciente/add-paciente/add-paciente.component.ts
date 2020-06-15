@@ -4,11 +4,11 @@ import { ServiceService } from 'src/app/Service/service.service';
 import { Paciente } from 'src/app/Modelo/Paciente';
 
 @Component({
-  selector: 'app-add',
-  templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css']
+  selector: 'app-add-paciente',
+  templateUrl: './add-paciente.component.html',
+  styleUrls: ['./add-paciente.component.css']
 })
-export class AddComponent implements OnInit {
+export class AddPacienteComponent implements OnInit {
 
   constructor(private router:Router, private service:ServiceService) { }
 
@@ -20,7 +20,7 @@ export class AddComponent implements OnInit {
   Guardar(){
     this.service.createPaciente(this.paciente).subscribe(data=>{
       alert("Se agrego el paciente con exito..!");
-      this.router.navigate(["listar"])
+      this.router.navigate(["listarPaciente"])
     })
   }
 

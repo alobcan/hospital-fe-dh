@@ -1,0 +1,50 @@
+<div class="container">
+    <mat-form-field>
+        <mat-label>Filtrar Por Nombre</mat-label>
+        <input matInput [(ngModel)]="filtroNombre" placeholder="Ex.Alejandro" (input)="applyFilter()">
+    </mat-form-field>
+
+    <mat-table [dataSource]="pacientes" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let paciente"> {{paciente.id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+            <mat-cell *matCellDef="let paciente"> {{paciente.nombre}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="apellido">
+            <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
+            <mat-cell *matCellDef="let paciente"> {{paciente.apellido}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="fecha_nacimiento">
+            <mat-header-cell *matHeaderCellDef> Fecha de Nacimiento </mat-header-cell>
+            <mat-cell *matCellDef="let paciente"> {{paciente.fecha_nacimiento}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="direccion">
+            <mat-header-cell *matHeaderCellDef> Direccion </mat-header-cell>
+            <mat-cell *matCellDef="let paciente"> {{paciente.direccion}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="historial">
+            <mat-header-cell *matHeaderCellDef> Historial </mat-header-cell>
+            <mat-cell *matCellDef="let paciente"> </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+            <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+            <mat-cell *matCellDef="let paciente">
+                <button mat-raised-button color="accent" (click)=EditarPaciente(paciente)>Editar</button>
+                <button mat-raised-button color="warn" (click)=BorrarPaciente(paciente)
+                    style="margin-left: 5px;">Borrar</button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let paciente; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

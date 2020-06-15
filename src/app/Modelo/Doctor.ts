@@ -1,4 +1,4 @@
-export class Paciente {
+export class Doctor {
     id: number;
     nombre: String;
     apellido: String;

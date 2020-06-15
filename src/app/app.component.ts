@@ -11,10 +11,16 @@ export class AppComponent {
 
   constructor(private router:Router){}
 
-  Listar(){
-    this.router.navigate(["listar"]);
+  ListarPacientes(){
+    this.router.navigate(["listarPaciente"]);
   }
-  Nuevo(){
-    this.router.navigate(["add"]);
+  NuevoPaciente(){
+    this.router.navigate(["addPaciente"]);
+  }
+  ListarDoctores(){
+    this.router.navigate(["listarDoctor"]);
+  }
+  NuevoDoctor(){
+    this.router.navigate(["addDoctor"]);
   }
 }
