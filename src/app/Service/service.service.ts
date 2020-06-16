@@ -25,10 +25,10 @@ export class ServiceService {
     return this.http.get<Paciente>(this.UrlPacientes + "/" + id);
   }
   updatePaciente(paciente: Paciente) {
-    return this.http.put<Paciente>(this.UrlPacientes + "/" + paciente.id, paciente);
+    return this.http.put<Paciente>(this.UrlPacientes + "/" + paciente.id_paciente, paciente);
   }
   deletePaciente(paciente: Paciente) {
-    return this.http.delete<Paciente>(this.UrlPacientes + "/" + paciente.id);
+    return this.http.delete<Paciente>(this.UrlPacientes + "/" + paciente.id_paciente);
   }
 
   getDoctores() {
@@ -38,7 +38,7 @@ export class ServiceService {
     return this.http.post<Doctor>(this.UrlDoctores, doctor);
   }
   getDoctorId(id: number) {
-    return this.http.get<Paciente>(this.UrlDoctores + "/" + id);
+    return this.http.get<Doctor>(this.UrlDoctores + "/" + id);
   }
   updateDoctor(doctor: Doctor) {
     return this.http.put<Doctor>(this.UrlDoctores + "/" + doctor.id, doctor);

@@ -1,5 +1,5 @@
 export class Paciente {
-    id: number;
+    id_paciente: number;
     nombre: String;
     apellido: String;
     fecha_nacimiento: Date;

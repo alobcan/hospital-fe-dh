@@ -26,7 +26,7 @@ export class ListarPacienteComponent implements OnInit {
   }
 
   EditarPaciente(paciente: Paciente): void {
-    localStorage.setItem("id", paciente.id.toString());
+    localStorage.setItem("id", paciente.id_paciente.toString());
     this.router.navigate(["editPaciente"]);
   }
 

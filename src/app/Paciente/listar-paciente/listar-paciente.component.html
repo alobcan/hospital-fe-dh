@@ -7,7 +7,7 @@
     <mat-table [dataSource]="pacientes" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
             <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-            <mat-cell *matCellDef="let paciente"> {{paciente.id}} </mat-cell>
+            <mat-cell *matCellDef="let paciente"> {{paciente.id_paciente}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="name">
@@ -39,8 +39,7 @@
             <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
             <mat-cell *matCellDef="let paciente">
                 <button mat-raised-button color="accent" (click)=EditarPaciente(paciente)>Editar</button>
-                <button mat-raised-button color="warn" (click)=BorrarPaciente(paciente)
-                    style="margin-left: 5px;">Borrar</button>
+                <button mat-raised-button color="warn" (click)=BorrarPaciente(paciente) style="margin-left: 5px;">Borrar</button>
             </mat-cell>
         </ng-container>
 
