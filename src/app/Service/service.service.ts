@@ -40,10 +40,10 @@ export class ServiceService {
     return this.http.get<Doctor>(this.Url + "/doctores/" + id);
   }
   updateDoctor(doctor: Doctor) {
-    return this.http.put<Doctor>(this.Url + "/doctores/" + doctor.id, doctor);
+    return this.http.put<Doctor>(this.Url + "/doctores/" + doctor.id_doctor, doctor);
   }
   deleteDoctor(doctor: Doctor) {
-    return this.http.delete<Doctor>(this.Url + "/doctores/" + doctor.id);
+    return this.http.delete<Doctor>(this.Url + "/doctores/" + doctor.id_doctor);
   }
 
   addHistorial(historial: Historial, id: number) {

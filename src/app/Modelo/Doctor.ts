@@ -1,5 +1,5 @@
 export class Doctor {
-    id: number;
+    id_doctor: number;
     nombre: String;
     apellido: String;
     fecha_nacimiento: Date;
