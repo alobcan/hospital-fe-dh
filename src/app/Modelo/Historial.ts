@@ -1,5 +1,5 @@
-export class Historial{
-    id:number;
-    descripcion:string;
-    fecha:string
+export class Historial {
+    id_historial: number;
+    descripcion: string;
+    fecha: Date;
 }

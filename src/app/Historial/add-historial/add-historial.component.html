@@ -1,1 +1,23 @@
-<p>add-historial works!</p>
+<mat-card class="container col-md-4">
+    <mat-card-header class="add-dialog">
+        <mat-card-title>Añadir Visita al Historial</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="add-dialog">
+        <form class="formulario">
+            <mat-form-field appaerance="legacy" class="formulario-full-width">
+                <mat-label>Descripcion</mat-label>
+                <input matInput placeholder="Nombre" [(ngModel)]=historial.descripcion name="nombre">
+            </mat-form-field>
+
+            <mat-form-field color="accent" class="formulario-full-width">
+                <mat-label>Fecha</mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="historial.fecha" name="fecha_nacimiento">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color="warn" (click)="Guardar()">Guardar</button>
+    </mat-card-actions>
+</mat-card>

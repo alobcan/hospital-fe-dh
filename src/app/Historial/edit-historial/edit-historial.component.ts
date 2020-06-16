@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/Service/service.service';
+import { Router } from '@angular/router';
+import { Historial } from 'src/app/Modelo/Historial';
 
 @Component({
   selector: 'app-edit-historial',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditHistorialComponent implements OnInit {
 
-  constructor() { }
+  historial: Historial = new Historial();
+
+  constructor(private service: ServiceService, private router: Router) { }
 
   ngOnInit(): void {
+    this.Editar();
   }
 
+  Editar() {
+    let id = localStorage.getItem("id_hist");
+    this.service.getHistorialId(+id).subscribe(data => {
+      this.historial = data;
+    })
+  }
+
+  Actualizar(historial: Historial) {
+    let id = localStorage.getItem("id_hist");
+    this.service.updateHistorial(historial, +id).subscribe(data => {
+      this.historial = data;
+      alert("Se actualizo el historial con exito");
+      this.router.navigate(["listarHistorial"]);
+    })
+
+  }
 }

@@ -1,1 +1,31 @@
-<p>listar-historial works!</p>
+<div class="container">
+    <div>
+        <button mat-button color="primary" (click)=AddHistorial()> Insertar Historial</button>
+    </div>
+    <mat-table [dataSource]="historiales" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let historial"> {{historial.id_historial}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="descripcion">
+            <mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>
+            <mat-cell *matCellDef="let historial"> {{historial.descripcion}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="fecha">
+            <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+            <mat-cell *matCellDef="let historial"> {{historial.fecha}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+            <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+            <mat-cell *matCellDef="let historial">
+                <button mat-button color="warn" (click)=BorrarHistorial(historial)>Borrar</button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let historial; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

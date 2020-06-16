@@ -47,5 +47,9 @@ export class ListarPacienteComponent implements OnInit {
       this.ngOnInit();
     }
   }
+  FetchHistorial(paciente:Paciente){
+    localStorage.setItem("id",paciente.id_paciente.toString());
+    this.router.navigate(["listarHistorial"]);
+  }
 
 }

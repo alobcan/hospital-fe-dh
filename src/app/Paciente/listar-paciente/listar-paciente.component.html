@@ -32,7 +32,9 @@
 
         <ng-container matColumnDef="historial">
             <mat-header-cell *matHeaderCellDef> Historial </mat-header-cell>
-            <mat-cell *matCellDef="let paciente"> </mat-cell>
+            <mat-cell *matCellDef="let paciente">
+                <button mat-raised-button color="primary" (click)=FetchHistorial(paciente)>Historial</button>
+            </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="acciones">
