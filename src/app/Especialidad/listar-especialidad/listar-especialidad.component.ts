@@ -22,13 +22,12 @@ export class ListarEspecialidadComponent implements OnInit {
   }
 
   fetchDoctores(especialidad:Especialidad){
-    localStorage.setItem("id",especialidad.id_especialidad.toString());
-    console.log(localStorage.getItem("id"));
+    localStorage.setItem("id_especialidad",especialidad.id_especialidad.toString());
     this.router.navigate(["listarDoctor"]);
   }
 
   EditarEspecialidad(especialidad:Especialidad):void{
-    localStorage.setItem("id",especialidad.id_especialidad.toString());
+    localStorage.setItem("id_especialidad",especialidad.id_especialidad.toString());
     this.router.navigate(["editEspecialidad"]);
   }
 

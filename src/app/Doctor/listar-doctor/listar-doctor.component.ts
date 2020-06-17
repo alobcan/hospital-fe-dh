@@ -22,8 +22,7 @@ export class ListarDoctorComponent implements OnInit {
 
   
   fetchDoctor(){
-    let id = localStorage.getItem("id");
-    console.log(id);
+    let id = localStorage.getItem("id_especialidad");
     this.service.getEspecialidadId(+id).subscribe(data =>{
       this.doctores = data.doctores;
     })

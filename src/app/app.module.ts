@@ -20,6 +20,9 @@ import { AddEspecialidadComponent } from './Especialidad/add-especialidad/add-es
 import { EditEspecialidadComponent } from './Especialidad/edit-especialidad/edit-especialidad.component';
 import { ListarEspecialidadComponent } from './Especialidad/listar-especialidad/listar-especialidad.component'
 import { AngularMaterialModule } from './angular-material/angular-material.module';
+import { AddHospitalComponent } from './Hospital/add-hospital/add-hospital.component';
+import { EditHospitalComponent } from './Hospital/edit-hospital/edit-hospital.component';
+import { ListarHospitalComponent } from './Hospital/listar-hospital/listar-hospital.component';
 
 
 
@@ -40,6 +43,9 @@ import { AngularMaterialModule } from './angular-material/angular-material.modul
     AddEspecialidadComponent,
     EditEspecialidadComponent,
     ListarEspecialidadComponent,
+    AddHospitalComponent,
+    EditHospitalComponent,
+    ListarHospitalComponent,
   ],
   imports: [
     BrowserModule,

@@ -26,7 +26,7 @@ export class ListarPacienteComponent implements OnInit {
   }
 
   EditarPaciente(paciente: Paciente): void {
-    localStorage.setItem("id", paciente.id_paciente.toString());
+    localStorage.setItem("id_paciente", paciente.id_paciente.toString());
     this.router.navigate(["editPaciente"]);
   }
 
@@ -48,7 +48,7 @@ export class ListarPacienteComponent implements OnInit {
     }
   }
   FetchHistorial(paciente:Paciente){
-    localStorage.setItem("id",paciente.id_paciente.toString());
+    localStorage.setItem("id_paciente",paciente.id_paciente.toString());
     this.router.navigate(["listarHistorial"]);
   }
 

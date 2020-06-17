@@ -17,7 +17,7 @@ export class EditEspecialidadComponent implements OnInit {
     this.Editar();
   }
   Editar() {
-    let id = localStorage.getItem("id");
+    let id = localStorage.getItem("id_especialidad");
     this.service.getEspecialidadId(+id).subscribe(data => {
       this.especialidad = data;
     })

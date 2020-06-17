@@ -17,7 +17,7 @@ export class AddHistorialComponent implements OnInit {
   }
 
   Guardar() {
-    let id = localStorage.getItem("id");
+    let id = localStorage.getItem("id_paciente");
     this.service.addHistorial(this.historial, +id).subscribe(data => {
       alert("Se agrego la visita al Historial");
       this.router.navigate(["listarHistorial"]);

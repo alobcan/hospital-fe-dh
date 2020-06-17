@@ -19,6 +19,7 @@ export class EditHistorialComponent implements OnInit {
   }
 
   Editar() {
+    console.log(localStorage);
     let id = localStorage.getItem("id_hist");
     this.service.getHistorialId(+id).subscribe(data => {
       this.historial = data;

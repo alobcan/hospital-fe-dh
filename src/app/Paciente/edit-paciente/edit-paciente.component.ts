@@ -18,7 +18,7 @@ export class EditPacienteComponent implements OnInit {
   }
 
   Editar() {
-    let id = localStorage.getItem("id");
+    let id = localStorage.getItem("id_paciente");
     this.service.getPacienteId(+id).subscribe(data => {
       this.paciente = data;
     })

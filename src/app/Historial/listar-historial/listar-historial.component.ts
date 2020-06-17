@@ -22,7 +22,7 @@ export class ListarHistorialComponent implements OnInit {
   }
  
   fetchHistoriales(){
-    let id = localStorage.getItem("id");
+    let id = localStorage.getItem("id_paciente");
     this.service.getPacienteId(+id).subscribe(data => {
       this.historiales = data.historiales;
     })
