@@ -18,9 +18,10 @@ export class AddEspecialidadComponent implements OnInit {
   }
 
   Guardar(){
+    this.especialidad.id_ref=parseInt(localStorage.getItem("id_hospital"));
     this.service.createEspecialidad(this.especialidad).subscribe(data =>{
       alert("Se creo la especialidad con exito!");
-      this.router.navigate(["listarEspecialidad"]);
+      this.router.navigate(["listarHospital"]);
     })
   }
 }

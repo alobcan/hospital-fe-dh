@@ -18,8 +18,8 @@ export class AddDoctorComponent implements OnInit {
   }
 
   Guardar(){
-    let id = localStorage.getItem("id_especialidad");
-    this.service.createDoctor(this.doctor, + id).subscribe(data=>{
+    this.doctor.id_ref=parseInt(localStorage.getItem("id_especialidad"));
+    this.service.createDoctor(this.doctor).subscribe(data=>{
       alert("Se agrego el doctor con exito..!");
       this.router.navigate(["listarDoctor"])
     })

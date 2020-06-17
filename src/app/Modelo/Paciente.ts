@@ -7,4 +7,5 @@ export class Paciente {
     fecha_nacimiento: Date;
     direccion: String;
     historiales: Historial[];
+    id_ref:number;
 }

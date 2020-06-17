@@ -1,7 +1,4 @@
-<div class="container">
-    <div>
-        <button mat-button color="primary" (click)=AddDoctor()>Añadir Doctor a Esta Especialidad</button>
-    </div>
+<mat-card class="container">
     <mat-form-field>
         <mat-label>Filtrar Por Nombre</mat-label>
         <input matInput [(ngModel)]="filtroDoctor" (input)="applyFilter()" placeholder="Ex.Alejandro">
@@ -44,4 +41,12 @@
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
-</div>
+
+    <mat-card-actions>
+
+        <button mat-button color="primary" (click)=AddDoctor()>Añadir Doctor a Esta Especialidad</button>
+        <button mat-button color="accent" (click)="Volver()">Ir a Detalle de Especialidades</button>
+        <button mat-button color="warn" (click)="VolverPrincipal()">Ir a Vista Principal</button>
+    </mat-card-actions>
+
+</mat-card>

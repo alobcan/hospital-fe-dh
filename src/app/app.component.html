@@ -1,15 +1,13 @@
-<div style="text-align: center">
-    <h1>
-        Digital Harbor Test
-    </h1>
-</div>
-
-<div class="container">
-    <button mat-raised-button color="primary" (click)="ListarPacientes()">Listar Pacientes</button>
-    <button mat-raised-button color="primary" (click)="NuevoPaciente()" style="margin-left: 10px;">Nuevo Paciente</button>
-    <button mat-raised-button color="primary" (click)="ListarEspecialidades()" style="margin-left: 10px;">Listar Especialidades</button>
-    <button mat-raised-button color="primary" (click)="NuevaEspecialidad()" style="margin-left: 10px;">Nueva Especialidad</button>
-</div>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>Test Digital Harbor</span>
+        <button mat-icon-button color="accent" (click)="Home()">
+            <mat-icon>home</mat-icon>
+        </button>
+        <span class="spacer"></span>
+        <mat-icon class="pos-icon" aria-hidden="false">verified_user</mat-icon>
+    </mat-toolbar-row>
+</mat-toolbar>
 
 
 

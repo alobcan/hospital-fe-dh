@@ -1,7 +1,4 @@
-<div class="container">
-    <div>
-        <button mat-button color="primary" (click)=AddHistorial()> Insertar Historial</button>
-    </div>
+<mat-card class="container">
     <mat-table [dataSource]="historiales" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
             <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
@@ -21,6 +18,7 @@
         <ng-container matColumnDef="acciones">
             <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
             <mat-cell *matCellDef="let historial">
+                <button mat-button color="accent" (click)=EditHistorial(historial)>Editar</button>
                 <button mat-button color="warn" (click)=BorrarHistorial(historial)>Borrar</button>
             </mat-cell>
         </ng-container>
@@ -28,4 +26,9 @@
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let historial; columns: displayedColumns;"></mat-row>
     </mat-table>
-</div>
+    <mat-card-actions>
+        <button mat-button color="primary" (click)=AddHistorial()> Insertar Historial</button>
+        <button mat-button color="accent" (click)="Volver()">Ir a Detalle de Pacientes</button>
+        <button mat-button color="warn" (click)="VolverPrincipal()">Ir a Vista Principal</button>
+    </mat-card-actions>
+</mat-card>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServiceService } from './Service/service.service';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +10,16 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'hospital-client';
 
-  constructor(private router:Router){}
+  constructor(private router:Router, private service:ServiceService){}
+  
+  ngOnInit(): void {
+    this.router.navigate(["listarHospital"]);
+  }
 
-  ListarPacientes(){
-    this.router.navigate(["listarPaciente"]);
-  }
-  NuevoPaciente(){
-    this.router.navigate(["addPaciente"]);
-  }
-  ListarEspecialidades(){
-    this.router.navigate(["listarEspecialidad"]);
-  }
-  NuevaEspecialidad(){
-    this.router.navigate(["addEspecialidad"]);
+  Home(){
+    localStorage.clear();
+    localStorage.setItem("id_hospital", "1");
+    this.router.navigate(["listarHospital"]);
+    
   }
 }

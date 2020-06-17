@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Historial } from 'src/app/Modelo/Historial';
 import { ServiceService } from 'src/app/Service/service.service';
 import { Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add-historial',
@@ -17,8 +18,8 @@ export class AddHistorialComponent implements OnInit {
   }
 
   Guardar() {
-    let id = localStorage.getItem("id_paciente");
-    this.service.addHistorial(this.historial, +id).subscribe(data => {
+    this.historial.id_ref = parseInt(localStorage.getItem("id_paciente"));
+    this.service.addHistorial(this.historial,).subscribe(data => {
       alert("Se agrego la visita al Historial");
       this.router.navigate(["listarHistorial"]);
     })

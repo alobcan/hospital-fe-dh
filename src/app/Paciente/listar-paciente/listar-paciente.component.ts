@@ -20,8 +20,9 @@ export class ListarPacienteComponent implements OnInit {
   constructor(private service: ServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getPacientes().subscribe(data => {
-      this.pacientes = data;
+    let id = localStorage.getItem("id_hospital");
+    this.service.getHospitalId(+id).subscribe(data => {
+      this.pacientes = data.pacientes;
     })
   }
 
@@ -50,6 +51,10 @@ export class ListarPacienteComponent implements OnInit {
   FetchHistorial(paciente:Paciente){
     localStorage.setItem("id_paciente",paciente.id_paciente.toString());
     this.router.navigate(["listarHistorial"]);
+  }
+
+  Volver(){
+    this.router.navigate(["listarHospital"]);
   }
 
 }

@@ -1,0 +1,29 @@
+.table-container {
+    float: left;
+    width: 50%;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.secondary-container {
+    float: right;
+    width: 50%;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+
+.tertiary-container {
+    float: left;
+    width: 50%;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.bot {
+    margin-left: auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+}

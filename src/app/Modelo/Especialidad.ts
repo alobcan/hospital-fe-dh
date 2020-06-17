@@ -5,4 +5,5 @@ export class Especialidad {
     nombre: string;
     descripcion: string;
     doctores: Doctor[];
+    id_ref:number;
 }

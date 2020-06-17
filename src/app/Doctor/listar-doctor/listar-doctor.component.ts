@@ -53,5 +53,11 @@ export class ListarDoctorComponent implements OnInit {
       this.ngOnInit();
     }
   }
+  Volver(){
+    this.router.navigate(["listarEspecialidad"]);
+  }
+  VolverPrincipal(){
+    this.router.navigate(["listarHospital"]);
+  }
 
 }

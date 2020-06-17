@@ -10,17 +10,18 @@ import { Paciente } from 'src/app/Modelo/Paciente';
 })
 export class AddPacienteComponent implements OnInit {
 
-  constructor(private router:Router, private service:ServiceService) { }
+  constructor(private router: Router, private service: ServiceService) { }
 
-  paciente:Paciente = new Paciente();
+  paciente: Paciente = new Paciente();
 
   ngOnInit(): void {
   }
 
-  Guardar(){
-    this.service.createPaciente(this.paciente).subscribe(data=>{
+  Guardar() {
+    this.paciente.id_ref = parseInt(localStorage.getItem("id_hospital"));
+    this.service.createPaciente(this.paciente).subscribe(data => {
       alert("Se agrego el paciente con exito..!");
-      this.router.navigate(["listarPaciente"])
+      this.router.navigate(["listarHospital"])
     })
   }
 

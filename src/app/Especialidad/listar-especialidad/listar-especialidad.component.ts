@@ -16,8 +16,9 @@ export class ListarEspecialidadComponent implements OnInit {
   constructor(private service:ServiceService, private router:Router) { }
 
   ngOnInit(): void {
-    this.service.getEspecialidades().subscribe(data =>{
-      this.especialidades=data;
+    let id = localStorage.getItem("id_hospital");
+    this.service.getHospitalId(+id).subscribe(data =>{
+      this.especialidades=data.especialidades;
     })
   }
 
@@ -30,5 +31,9 @@ export class ListarEspecialidadComponent implements OnInit {
     localStorage.setItem("id_especialidad",especialidad.id_especialidad.toString());
     this.router.navigate(["editEspecialidad"]);
   }
+  Volver(){
+    this.router.navigate(["listarHospital"]);
+  }
+  
 
 }

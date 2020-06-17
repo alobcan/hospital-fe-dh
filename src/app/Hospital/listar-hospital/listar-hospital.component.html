@@ -1,1 +1,102 @@
-<p>listar-hospital works!</p>
+<mat-card class="table-container mat-elevation-z8">
+
+    <mat-card-header class="header-container">
+        <mat-card-title>Lista de Hospitales</mat-card-title>
+    </mat-card-header>
+
+    <mat-form-field>
+        <mat-label>Filtrar Por Nombre</mat-label>
+        <input matInput [(ngModel)]="filtroNombre" placeholder="Ex. Belga" (input)="applyFilter()">
+    </mat-form-field>
+
+    <mat-table [dataSource]="hospitales">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> Selector </mat-header-cell>
+            <mat-cell *matCellDef="let hospital">
+                <button mat-button color="primary" (click)="detalleHospital(hospital)">ver detalle</button>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+            <mat-cell *matCellDef="let hospital"> {{hospital.nombre}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="acciones">
+            <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+            <mat-cell *matCellDef="let hospital">
+                <button mat-button color="accent" (click)="EditHospital(hospital)">Editar</button>
+                <button class="bot" mat-button color="warn" (click)="BorrarHospital(hospital)">Eliminar</button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let hospital; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+    <mat-card-actions>
+        <button class="bot" mat-button color="primary" (click)="AddHospital()">Añadir Hospital</button>
+    </mat-card-actions>
+
+</mat-card>
+
+<mat-card class="secondary-container mat-elevation-z8">
+    <mat-card-header class="header-container">
+        <mat-card-title>Lista de Especialidades {{nombreHospital}}</mat-card-title>
+    </mat-card-header>
+    <mat-table [dataSource]="especialidades">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let especialidad"> {{especialidad.id_especialidad}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+            <mat-cell *matCellDef="let especialidad"> {{especialidad.nombre}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="acciones">
+            <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+            <mat-cell *matCellDef="let especialidad">
+                <button class="bot" mat-button color="warn" (click)="MostrarDoctor(especialidad)">Doctores de Especialidad</button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let hospital; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+
+    <mat-card-actions>
+        <button class="bot" mat-button color="primary" (click)="AddEspecialidad()">Añadir Especialidad</button>
+        <button class="bot" mat-button color="accent" (click)="detalleEspecialidad()">ver detalle</button>
+    </mat-card-actions>
+
+</mat-card>
+
+<mat-card class="tertiary-container mat-elevation-z8">
+    <mat-card-header class="header-container">
+        <mat-card-title>Lista de Pacientes {{nombreHospital}}</mat-card-title>
+    </mat-card-header>
+    <mat-table [dataSource]="pacientes">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let paciente"> {{paciente.id_paciente}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+            <mat-cell *matCellDef="let paciente"> {{paciente.nombre}} {{paciente.apellido}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="acciones">
+            <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+            <mat-cell *matCellDef="let paciente">
+                <button class="bot" mat-button color="warn" (click)="MostrarHistorial(paciente)">Historial</button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumnsEspecialidad"></mat-header-row>
+        <mat-row *matRowDef="let hospital; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+    <mat-card-actions>
+        <button class="bot" mat-button color="primary" (click)="AddPaciente()">Registrar Paciente</button>
+        <button class="bot" mat-button color="accent" (click)="detallePaciente()">ver detalle</button>
+    </mat-card-actions>
+
+</mat-card>
