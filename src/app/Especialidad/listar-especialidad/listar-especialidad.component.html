@@ -1,1 +1,36 @@
-<p>listar-especialidad works!</p>
+<div class="container">
+    <mat-table [dataSource]="especialidades" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let especialidad"> {{especialidad.id_especialidad}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="nombre">
+            <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+            <mat-cell *matCellDef="let especialidad"> {{especialidad.nombre}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="descripcion">
+            <mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>
+            <mat-cell *matCellDef="let especialidad"> {{especialidad.descripcion}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="doctores">
+            <mat-header-cell *matHeaderCellDef> Historial </mat-header-cell>
+            <mat-cell *matCellDef="let especialidad">
+                <button mat-button color="primary" (click)=fetchDoctores(especialidad)>Doctores</button>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+            <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+            <mat-cell *matCellDef="let especialidad">
+                <button mat-button color="accent" (click)=EditarEspecialidad(especialidad)>Editar</button>
+                <button mat-button color="warn" style="margin-left: 5px;">Borrar</button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let especialidad; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

@@ -9,6 +9,9 @@ import { EditDoctorComponent } from './Doctor/edit-doctor/edit-doctor.component'
 import { ListarHistorialComponent } from './Historial/listar-historial/listar-historial.component';
 import { AddHistorialComponent } from './Historial/add-historial/add-historial.component';
 import { EditHistorialComponent } from './Historial/edit-historial/edit-historial.component';
+import { ListarEspecialidadComponent } from './Especialidad/listar-especialidad/listar-especialidad.component';
+import { AddEspecialidadComponent } from './Especialidad/add-especialidad/add-especialidad.component';
+import { EditEspecialidadComponent } from './Especialidad/edit-especialidad/edit-especialidad.component';
 
 
 const routes: Routes = [
@@ -20,7 +23,10 @@ const routes: Routes = [
   { path: 'editDoctor', component: EditDoctorComponent },
   { path: 'listarHistorial', component: ListarHistorialComponent },
   { path: 'addHistorial', component: AddHistorialComponent },
-  { path: 'editHistorial', component: EditHistorialComponent }
+  { path: 'editHistorial', component: EditHistorialComponent },
+  { path: 'listarEspecialidad', component: ListarEspecialidadComponent },
+  { path: 'addEspecialidad', component: AddEspecialidadComponent },
+  { path: 'editEspecialidad', component: EditEspecialidadComponent }
 ];
 
 @NgModule({

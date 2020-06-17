@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/Service/service.service';
+import { Router } from '@angular/router';
+import { Especialidad } from 'src/app/Modelo/Especialidad';
 
 @Component({
   selector: 'app-listar-especialidad',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarEspecialidadComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['id', 'nombre', 'descripcion', 'doctores', 'acciones'];
+  especialidades:Especialidad[];
+
+  constructor(private service:ServiceService, private router:Router) { }
 
   ngOnInit(): void {
+    this.service.getEspecialidades().subscribe(data =>{
+      this.especialidades=data;
+    })
+  }
+
+  fetchDoctores(especialidad:Especialidad){
+    localStorage.setItem("id",especialidad.id_especialidad.toString());
+    console.log(localStorage.getItem("id"));
+    this.router.navigate(["listarDoctor"]);
+  }
+
+  EditarEspecialidad(especialidad:Especialidad):void{
+    localStorage.setItem("id",especialidad.id_especialidad.toString());
+    this.router.navigate(["editEspecialidad"]);
   }
 
 }

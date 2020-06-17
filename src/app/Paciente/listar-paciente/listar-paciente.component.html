@@ -33,15 +33,15 @@
         <ng-container matColumnDef="historial">
             <mat-header-cell *matHeaderCellDef> Historial </mat-header-cell>
             <mat-cell *matCellDef="let paciente">
-                <button mat-raised-button color="primary" (click)=FetchHistorial(paciente)>Historial</button>
+                <button mat-button color="primary" (click)=FetchHistorial(paciente)>Historial</button>
             </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="acciones">
             <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
             <mat-cell *matCellDef="let paciente">
-                <button mat-raised-button color="accent" (click)=EditarPaciente(paciente)>Editar</button>
-                <button mat-raised-button color="warn" (click)=BorrarPaciente(paciente) style="margin-left: 5px;">Borrar</button>
+                <button mat-button color="accent" (click)=EditarPaciente(paciente)>Editar</button>
+                <button mat-button color="warn" (click)=BorrarPaciente(paciente) style="margin-left: 5px;">Borrar</button>
             </mat-cell>
         </ng-container>
 

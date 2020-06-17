@@ -10,23 +10,32 @@ import { Router } from '@angular/router';
 })
 export class ListarDoctorComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name', 'apellido', 'nacimiento','direccion','historial','acciones'];
+  displayedColumns: string[] = ['id', 'name', 'apellido', 'nacimiento','direccion','acciones'];
   doctores:Doctor[];
   filtroDoctor: String;
 
   constructor(private service: ServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getDoctores().subscribe(data => {
-      this.doctores = data;
-    })
+    this.fetchDoctor()
   }
 
   
-  
+  fetchDoctor(){
+    let id = localStorage.getItem("id");
+    console.log(id);
+    this.service.getEspecialidadId(+id).subscribe(data =>{
+      this.doctores = data.doctores;
+    })
+  }
+
+  AddDoctor(){
+    this.router.navigate(["addDoctor"]);
+  }
+
 
   EditarDoctor(doctor:Doctor): void {
-    localStorage.setItem("id", doctor.id_doctor.toString());
+    localStorage.setItem("id_doctor", doctor.id_doctor.toString());
     this.router.navigate(["editDoctor"]);
   }
 

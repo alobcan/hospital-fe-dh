@@ -15,10 +15,13 @@ export class AddDoctorComponent implements OnInit {
   doctor:Doctor=new Doctor();
 
   ngOnInit(): void {
+    console.log(localStorage)
   }
 
   Guardar(){
-    this.service.createDoctor(this.doctor).subscribe(data=>{
+    let id = localStorage.getItem("id");
+    console.log(id);
+    this.service.createDoctor(this.doctor, + id).subscribe(data=>{
       alert("Se agrego el doctor con exito..!");
       this.router.navigate(["listarDoctor"])
     })

@@ -17,10 +17,10 @@ export class AppComponent {
   NuevoPaciente(){
     this.router.navigate(["addPaciente"]);
   }
-  ListarDoctores(){
-    this.router.navigate(["listarDoctor"]);
+  ListarEspecialidades(){
+    this.router.navigate(["listarEspecialidad"]);
   }
-  NuevoDoctor(){
-    this.router.navigate(["addDoctor"]);
+  NuevaEspecialidad(){
+    this.router.navigate(["addEspecialidad"]);
   }
 }
