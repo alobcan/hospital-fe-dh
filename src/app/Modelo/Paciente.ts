@@ -10,4 +10,5 @@ export class Paciente {
     id_ref:number;
     createdBy: string;
     updatedBy: string;
+    updatedAt: Date;
 }

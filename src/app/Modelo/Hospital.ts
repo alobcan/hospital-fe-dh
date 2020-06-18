@@ -8,4 +8,5 @@ export class Hospital{
     especialidades: Especialidad[];
     createdBy: string;
     updatedBy: string;
+    updatedAt: Date;
 }

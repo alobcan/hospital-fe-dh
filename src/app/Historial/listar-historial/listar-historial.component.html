@@ -1,8 +1,8 @@
 <mat-card class="container">
     <mat-table [dataSource]="historiales" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
-            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-            <mat-cell *matCellDef="let historial"> {{historial.id_historial}} </mat-cell>
+            <mat-header-cell *matHeaderCellDef> Ultima Modificacion </mat-header-cell>
+            <mat-cell *matCellDef="let historial"> {{historial.updatedAt}} por {{historial.updatedBy}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="descripcion">

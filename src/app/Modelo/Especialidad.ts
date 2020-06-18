@@ -8,4 +8,5 @@ export class Especialidad {
     id_ref:number;
     createdBy: string;
     updatedBy: string;
+    updatedAt: Date;
 }

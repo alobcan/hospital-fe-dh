@@ -6,8 +6,8 @@
 
     <mat-table [dataSource]="doctores" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
-            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-            <mat-cell *matCellDef="let doctor"> {{doctor.id_doctor}} </mat-cell>
+            <mat-header-cell *matHeaderCellDef> Ultima Modificacion </mat-header-cell>
+            <mat-cell *matCellDef="let doctor"> {{doctor.updatedAt}} por {{doctor.updatedBy}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="name">

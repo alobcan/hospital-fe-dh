@@ -13,7 +13,7 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class ListarPacienteComponent implements OnInit {
 
 
-  displayedColumns: string[] = ['id', 'name', 'apellido', 'fecha_nacimiento', 'direccion', 'historial', 'acciones'];
+  displayedColumns: string[] = ['mod', 'name', 'apellido', 'fecha_nacimiento', 'direccion', 'historial', 'acciones'];
   pacientes: Paciente[];
   filtroNombre: String;
 

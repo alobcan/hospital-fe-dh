@@ -5,9 +5,9 @@
     </mat-form-field>
 
     <mat-table [dataSource]="pacientes" class="mat-elevation-z8">
-        <ng-container matColumnDef="id">
-            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-            <mat-cell *matCellDef="let paciente"> {{paciente.id_paciente}} </mat-cell>
+        <ng-container matColumnDef="mod">
+            <mat-header-cell *matHeaderCellDef> Ultima Modificacion </mat-header-cell>
+            <mat-cell *matCellDef="let paciente"> {{paciente.updatedAt}} por {{paciente.updatedBy}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="name">

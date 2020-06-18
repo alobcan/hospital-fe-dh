@@ -1,8 +1,8 @@
 <div class="container">
     <mat-table [dataSource]="especialidades" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
-            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-            <mat-cell *matCellDef="let especialidad"> {{especialidad.id_especialidad}} </mat-cell>
+            <mat-header-cell *matHeaderCellDef> Ultima Modificacion </mat-header-cell>
+            <mat-cell *matCellDef="let especialidad"> {{especialidad.updatedAt}} por {{especialidad.updatedBy}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="nombre">
