@@ -6,6 +6,6 @@ export class Especialidad {
     descripcion: string;
     doctores: Doctor[];
     id_ref:number;
-    created_by: string;
-    updated_by: string;
+    createdBy: string;
+    updatedBy: string;
 }

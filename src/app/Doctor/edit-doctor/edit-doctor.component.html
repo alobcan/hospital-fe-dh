@@ -25,6 +25,11 @@
                 <mat-label>Direccion</mat-label>
                 <input matInput placeholder="Direccion" [(ngModel)]=doctor.direccion name="direccion">
             </mat-form-field>
+            <br/>
+            <mat-form-field appaerance="legacy" class="formulario-full-width">
+                <mat-label>Modificado Por:</mat-label>
+                <input matInput placeholder="Nombre del creador del registro" [(ngModel)]="doctor.updatedBy" name="updatedBy">
+            </mat-form-field>
         </form>
     </mat-card-content>
     <mat-card-actions>
