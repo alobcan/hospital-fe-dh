@@ -8,4 +8,6 @@ export class Paciente {
     direccion: String;
     historiales: Historial[];
     id_ref:number;
+    created_by: string;
+    updated_by: string;
 }

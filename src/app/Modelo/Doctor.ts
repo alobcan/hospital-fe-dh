@@ -4,5 +4,7 @@ export class Doctor {
     apellido: String;
     fecha_nacimiento: Date;
     direccion: String;
-    id_ref:number;
+    id_ref: number;
+    created_by: string;
+    updated_by: string;
 }

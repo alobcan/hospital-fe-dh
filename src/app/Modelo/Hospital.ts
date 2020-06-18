@@ -6,4 +6,6 @@ export class Hospital{
     nombre:string;
     pacientes: Paciente[];
     especialidades: Especialidad[];
+    created_by: string;
+    updated_by: string;
 }

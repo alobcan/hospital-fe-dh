@@ -1,3 +1,53 @@
+In the folder where the test-client was cloned, run by command line
+
+
+
+npm install
+
+
+to avoid any compilation problems.
+
+
+
+Also in case you need to install the Angular material dependencies with
+
+
+ng add @ angular / material 
+
+run the app with
+
+ng serve
+
+
+##############################################################################
+
+En la carpeta donde se clonó el test-client, ejecutar por línea de comandos 
+
+
+npm install
+
+para evitar cualquier problema en la compilación.
+
+
+
+
+También en caso de hacer falta instalar las dependencias de Angular material con 
+
+
+ng add @angular/material
+
+
+para iniciar la aplicacion:
+ 
+ng serve
+
+
+
+
+
+
+
+
 # HospitalClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
